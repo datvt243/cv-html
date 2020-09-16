@@ -1,0 +1,46 @@
+.navbar-wrapper
+  nav.navbar-content
+    .navbar-toggler
+      .toggler-btn
+        span
+        span
+        span
+    .navbar-collapse
+      .navbar-nav
+        .navbar-over
+          ul.nav-main.js-navi
+            -
+              var list_nav = [
+                {
+                  link: '#info',
+                  id: 'Thông tin'
+                },
+                {
+                  link: '#about',
+                  id: 'Giới thiệu'
+                },
+                {
+                  link: '#skills',
+                  id: 'Kỹ Năng'
+                },
+                {
+                  link: '#education',
+                  id: 'Bằng cấp'
+                },
+                {
+                  link: '#experience',
+                  id: 'Kinh Ngiệm Làm Việc'
+                },
+                {
+                  link: '#portfolio',
+                  id: 'Portfolio'
+                }
+              ]
+            each nav in list_nav
+              li.nav-item(class= nav.dropdown ? 'dropdown' : '')
+                a.nav-link(href=nav.link)= nav.id
+                if nav.dropdown
+                  .nav-dropdown
+                    each item in nav.dropdown
+                      a.dropdown-item(href=item.link)= item.id
+          

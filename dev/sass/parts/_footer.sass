@@ -1,0 +1,35 @@
+@charset "utf-8"
+
+
+/* COMMON FOOTER
+ * -----------------------------------------------*/
+
+footer
+  color: #fff
+  background-color: #2a3a3f
+  padding: 2rem 0 1.5rem
+  font-size: 1.4rem
+  letter-spacing: .1em
+
+.totop
+  position: fixed
+  z-index: $base-zindex-backtotop
+  bottom: 1.5rem
+  right: 1.5rem
+  cursor: pointer
+
+  .icon
+    $val: 7rem
+    display: block
+    width: #{$val}
+    height: #{$val}
+    background: url('../img/back-to-top.png') no-repeat center / contain
+    border-radius: 50%
+    border: .1rem solid rgba(255,255,255,.2)
+
+  +small
+
+    .icon
+      $val: 4.5rem
+      width: #{$val}
+      height: #{$val}

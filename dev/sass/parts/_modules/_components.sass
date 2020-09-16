@@ -1,0 +1,305 @@
+@charset "utf-8"
+
+.hr-line
+  margin: 0 0 5rem
+  border: 0
+  border-top: 1px solid rgba(255, 255, 255, .5)
+
+.list
+  list-style-type: none
+
+  li
+    position: relative
+    padding:
+      left: 1em
+      bottom: .2em
+    &:before
+      content: ''
+      position: absolute
+      top: .5em
+      left: 0
+      width: .4em
+      height: .4em
+      background-color: currentColor
+      +transform(rotate(5deg))
+
+  &-tags
+    +display-flex
+    +flex-wrap(wrap)
+    $val: .5rem
+    margin: 0 -#{$val} 1.5rem
+    > li
+      padding: 
+        left: #{$val}
+        right: #{$val}
+      margin-bottom: 1rem
+
+  &-contact
+    width: 100%
+    border-top: .1rem solid
+    tr
+      border-bottom: .1rem solid
+    th
+      font:
+        family: $base-font-roboto-slab
+        weight: 700
+      white-space: nowrap
+    th, td
+      padding: 1.5rem 1rem
+
+    a
+      color: currentColor
+
+.tag
+  display: block
+  padding: .5rem 1rem .3rem
+  font-size: 1.2rem
+  color: #c7b3b3
+  background-color: #26262d
+  border-radius: 0 .3rem .3rem 0
+  border-left: .4rem solid #863737
+
+.progress
+  
+  &-wrapper
+    &:not(:last-child)
+      margin-bottom: 3rem
+
+  &-list
+    li:not(:last-child)
+      margin-bottom: 1.5em
+
+  &-title
+    font:
+      weight: 700
+      size: 1.5rem
+    text-transform: uppercase
+    margin-bottom: 0
+
+  &-circle
+    position: relative
+    text-align: center
+    min-width: 15rem
+    margin:
+      left: auto
+      right: auto
+
+    svg
+      height: 13rem
+      width: 13rem
+
+      &:last-child
+        position: absolute
+        left: 0
+        top: 0
+        +transform(rotate(-90deg))
+
+        circle
+          fill: none
+          stroke: #35356b
+          stroke-dasharray: 629
+          stroke-width: 22
+          -webkit-animation: progress-loader 2.4s 1
+          animation: progress-loader 2.4s 1
+
+    .loader
+      position: relative
+      color: #4cd964
+      display: inline-block
+      text-align: center
+      margin-bottom: .5rem
+
+      &:after
+        content: attr(data-percent)
+        font:
+          size: 2rem
+          family: $base-font-roboto-slab
+        letter-spacing: .05em
+        left: 0
+        line-height: 1
+        +transform(translateY(-50%))
+        position: absolute
+        text-align: center
+        top: 50%
+        width: 100%
+        color: #fff
+
+  &-bar
+    .line
+      overflow: hidden
+      position: relative
+      height: 1.6rem
+      width: 100%
+      padding-top: .1rem
+      border-radius: 99.9rem
+      background-color: #26262d
+      span
+        position: absolute
+        z-index: 1
+        top: 0
+        left: 0
+        height: 100%
+        border-radius: 99.9rem
+        background: rgb(0,161,146)
+        background: linear-gradient(90deg, rgba(0,161,146,1) 0%, rgba(249,188,45,1) 100%)
+        &:after
+          content: ''
+          position: absolute
+          z-index: 1
+          top: 50%
+          +transform(translateY(-50%))
+          right: .3em
+          width: .3em
+          height: .3em
+          border-radius: 50%
+          background-color: rgba(0, 0, 0, 0.2)
+          +box-shadow(inset 0 0.2em 0.2em rgba(0, 0, 0, 0.3), 0 0.1em 0.1em rgba(255, 255, 255, 0.5))
+  
+  +small
+
+    &-circle
+      min-width: 11rem
+      svg
+        height: 11rem
+        width: 11rem
+
+.user
+
+  &-wrapper
+    position: relative
+    width: 30rem
+    text-align: center
+    margin: 0 auto 2rem
+
+  &-avatar
+    user-select: none
+    width: 25rem
+    height: 25rem
+    overflow: hidden
+    border-radius: 50%
+    border: .5rem solid #fff
+    margin: 0 auto 1rem
+
+  &-name
+    font:
+      size: 4.5rem
+      family: $base-font-roboto-slab
+    text-transform: uppercase
+
+  &-position
+    font:
+      size: 2rem
+      family: $base-font-roboto-slab
+    margin-bottom: 1rem
+
+.timeline
+
+  &-list
+    > li
+      padding: 1rem 1rem 4rem 5rem
+      border-left: .3rem dashed $color-green
+      position: relative
+
+      &:after
+        content: ''
+        height: 2rem
+        width: 2rem
+        border-radius: 50%
+        background-color: #ffe8e8
+        left: -1.2rem
+        top: 1.5rem
+        position: absolute
+
+      &:last-child
+        padding-bottom: 2rem
+
+  &-date
+    letter-spacing: .05em
+    margin-bottom: 1rem
+
+    .lable
+      display: inline-block
+      background-color: $color-green
+      color: #fff
+      font-size: 1.8rem
+      padding: .8rem 1rem
+      margin-bottom: 1rem
+      position: relative
+      line-height: 1
+
+      &:after
+        right: 99%
+        top: 50%
+        border: solid transparent
+        content: " "
+        height: 0
+        width: 0
+        position: absolute
+        pointer-events: none
+        border-color: transparent
+        border-right-color: $color-green
+        border-width: 1.8rem
+        margin-top: -1.8rem
+
+  &-school
+    font:
+      size: 2.6rem
+      family: $base-font-roboto-slab
+    text-transform: capitalize
+    margin-bottom: 1.8rem
+    opacity: 1 !important
+
+  &-job
+    font:
+      size: 3rem
+      family: $base-font-roboto-slab
+    text-transform: uppercase
+    margin-bottom: 1rem
+    opacity: 1 !important
+
+  &-des
+    margin-bottom: 2rem
+
+  +small
+
+    &-list
+      > li
+        padding-left: 3rem
+
+    &-job
+      font-size: 2.2rem
+
+    &-school
+      font-size: 2rem
+
+.portfolio
+  
+  &-card
+    overflow: hidden
+    position: relative
+    border: .5rem solid $color-green
+    
+  &-link
+    display: block
+    color: currentColor
+    &:hover
+      img
+        +transform(scale(1.1))
+
+  &-image
+    overflow: hidden
+    img
+      +transition(all .5s)
+      
+  &-heading
+    position: absolute
+    left: 0
+    bottom: 1rem
+    width: 100%
+    z-index: 1
+    text-transform: uppercase
+    color: #fff
+    background-color: #333333
+    padding: 1rem
+    font-family: $base-font-roboto-slab
+    letter-spacing: .05em

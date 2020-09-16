@@ -1,0 +1,392 @@
+extends _layouts/default
+
+block vars
+  -title        = 'Võ Tấn Đạt - CV'
+  -description  = 'Front-end developer'
+  -keywords     = 'HTML, CSS, JS, Vuejs'
+  -pageID       = 'top'
+  -path         = '.'
+
+block container
+
+  // ./ Thông tin
+  section.section-wrapper.section-info#info
+    .keyvisual
+    .wrapper
+      .layout-row.large-two-column.small-one-column
+        .column.info
+          .user-wrapper
+            p.user-avatar(class="wow fade-in-up" data-wow-delay=".4s")
+              img(src=path+'/img/avatar.jpg', alt="Vo Tan Dat")
+            h1.user-name(class="wow fade-in-up" data-wow-delay=".6s")
+              | Võ Tấn Đạt
+            p.user-position(class="wow fade-in-up" data-wow-delay=".8s")
+              i Front-end Developer
+          p.text-center(class="wow fade-in-up" data-wow-delay="1s")
+            a.btn.btn-download(href=path+'/pdf/Vo-Tan-Dat-CV.pdf') Download file PDF
+        .column.align-self-end
+          table.list-contact(class="wow fade-in-up" data-wow-delay="1.2s")
+            tr
+              th Phone
+              td
+                a.tel(href="tel:0385262510") 038 5262 510
+            tr
+              th Skype
+              td
+                | votanit
+            tr
+              th Email
+              td
+                a.email(href="mailto:votan.it@gmail.com") votan.it@gmail.com
+            tr
+              th Địa chỉ
+              td
+                address 14/13/69 Thân Nhân Trung, Tân Bình, TP. Hồ Chí Minh
+
+  // ./ Giới Thiệu
+  section.section-wrapper.section-about#about
+    .wrapper
+      .section-header(class="wow fade-in-up")
+        +heading-primary('Xin chào, <br class="small-br">Tôi là Đạt')
+      .section-content
+        .typography-wrapper(class="wow fade-in-up")
+          p Với niềm đam mê công nghệ thông tin, tôi hi vọng đem lòng nhiệt huyết, đam mê của mình cống hiến tất cả cho nơi tôi làm việc.
+          p Mong muốn học hỏi kinh nghiệm ở môi trường làm việc chuyên nghiệp, năng động. Công việc ổn định để gắn bó lâu dài. Có cơ hội thăng tiến cao, thành công trong công việc.
+          +list(
+            [
+              'Đam mê với lập trình web front-end, yêu thích tạo ra các giao diện web đẹp.',
+              'Chăm chỉ học tập, tiếp thu nhanh nếu được training và hướng dẫn.',
+              'Mong muốn nâng cao kinh nghiệm, nâng cao kĩ năng.',
+              'Mục tiêu duy nhất là phấn đấu trở thành một lập trình viên front-end giỏi, cống hiến tốt cho công ty.'
+            ]
+          )
+        .clearifix(class="wow fade-in-up")
+          +heading-secondary('Mục tiêu nghề nghiệp')
+          .typography-wrapper
+            p Với 5 năm kinh nghiệm front-end với HTML, CSS, JS. Tôi hy vọng được làm việc ở lĩnh vực mới (Vuejs) để thử thách và phát triển bản thân.
+            +list(
+              [
+                'Mong muốn tìm được chỗ làm ổn định lâu dài',
+                'Mong muốn tìm được chỗ làm có cơ hội thăng tiến tốt',
+                'Mong muốn tìm được chỗ làm có mức lương tốt',
+                'Mong muốn tìm được nơi có cơ hội cống hiến bản thân tốt'
+              ]
+            )
+            
+  // ./ Kỹ Năng Cá Nhân - Kỹ Năng Chuyên Môn
+  section.section-wrapper.section-skills#skills
+    .wrapper
+      .personal-skills
+        .section-header(class="wow fade-in-up")
+          +heading-primary('Kỹ Năng Cá Nhân')
+        .section-content
+          .layout-row.large-two-column.small-one-column
+            .column.margin-bottom-0
+              .typography-wrapper(class="wow fade-in-up")
+                p
+                  | Được mọi người đánh giá là hoà đồng và dễ mến, tính tình vui vẻ, sẵn sàng giúp đỡ mọi người trong lúc gặp khó khăn.
+                  br
+                  | Những lúc rãnh thường ngồi tìm hiểu, nạp thêm những kiến thức mới vào đầu. 
+                +list(
+                  [
+                    'Khả năng làm việc độc lập tốt',
+                    'Làm việc nhóm, phân chia công việc',
+                    'Chiệu áp lực tốt',
+                    'Học hỏi nhanh'
+                  ]
+                )
+            .column.margin-bottom-0
+              ul.layout-row.small-three-column.ex-small-two-column.is-center.personal-skills-list
+                -
+                  var list_skills = [
+                    {
+                      percent: "70%", 
+                      title: 'Giao tiếp',
+                      delay: '.4s'
+                    },
+                    {
+                      percent: "80%", 
+                      title: 'Làm việc nhóm',
+                      delay: '.6s'
+                    },
+                    {
+                      percent: "85%", 
+                      title: 'Làm việc độc lập',
+                      delay: '.8s'
+                    },
+                    {
+                      percent: "80%", 
+                      title: 'Tự học',
+                      delay: '1s'
+                    },
+                    {
+                      percent: "85%", 
+                      title: 'Chiệu áp lực',
+                      delay: '1.2s'
+                    }
+                  ]
+                each skill in list_skills
+                  li.column(class="wow fade-in-up" data-wow-delay=skill.delay)
+                    +skills(skill)
+      .advanced-skill
+        .section-header(class="wow fade-in-up")
+          +heading-primary('Kỹ Năng Chuyên Môn')
+        .section-content
+          .typography-wrapper(class="wow fade-in-up")
+            p Trong 4 năm, tôi đã thiết kế, phát triển và tiếp thị các trang web. 
+          .layout-row.large-three-column.medium-two-column.ex-small-one-column
+            .column.margin-bottom-0(class="wow fade-in-up" data-wow-delay='.4s')
+              +heading-secondary('Thiết Kế')
+              .progress-wrapper
+                ul.progress-list
+                  -
+                    var design = [
+                      {
+                        title: 'Photoshop', width: '80%'
+                      },
+                      {
+                        title: 'illustrator', width: '65%'
+                      },
+                      {
+                        title: 'Lightroom', width: '70%'
+                      }
+                    ]
+                  each item in design
+                    li
+                      +progress-bar(item)
+            .column.margin-bottom-0(class="wow fade-in-up" data-wow-delay='.6s')
+              +heading-secondary('Front-end')
+              .progress-wrapper
+                ul.progress-list
+                  -
+                    var design = [
+                      {
+                        title: 'HTML5, CSS3', width: '90%'
+                      },
+                      {
+                        title: 'Javascript + JQuery', width: '70%'
+                      },
+                      {
+                        title: 'Responsive, PerfectPixe', width: '85%'
+                      },
+                      {
+                        title: 'Wordpress', width: '70%'
+                      },
+                      {
+                        title: 'Vuejs', width: '60%'
+                      }
+                    ]
+                  each item in design
+                    li
+                      +progress-bar(item)
+              .clearfix
+                ul.list-tags
+                  -
+                    var list_tag01 = ['Bootstrap', 'Foundation']
+                  each item in list_tag01
+                    li
+                      .tag= item
+                ul.list-tags
+                  -
+                    var list_tag02 = ['SASS, SCSS, Compass', 'Cross-browser']
+                  each item in list_tag02
+                    li
+                      .tag= item
+                ul.list-tags
+                  -
+                    var list_tag03 = ['Grunt', 'Pugjs', 'GIT']
+                  each item in list_tag03
+                    li
+                      .tag= item
+            .column.margin-bottom-0(class="wow fade-in-up" data-wow-delay='.8s')
+              +heading-secondary('Back-end')
+              .progress-wrapper
+                ul.progress-list
+                  -
+                    var design = [
+                      {
+                        title: 'PHP', width: '50%'
+                      },
+                      {
+                        title: 'MySQL', width: '50%'
+                      }
+                    ]
+                  each item in design
+                    li
+                      +progress-bar(item)
+              .clearfix
+                ul.list-tags
+                  -
+                    var list_tag04 = ['Wordpress', 'Shopify']
+                  each item in list_tag04
+                    li
+                      .tag= item
+
+  // ./ Học vấn / bằng cấp
+  section.section-wrapper.section-education#education
+    .wrapper
+      .section-header(class="wow fade-in-up")
+        +heading-primary('Học vấn / <br class="small-br">bằng cấp')
+      .section-content
+        ul.timeline-list
+          -
+            var timeline_education = [
+              {
+                data:   '09/2011 - 07/2014',
+                job:    'CAO ĐẲNG CÔNG NGHỆ THÔNG TIN',
+                school: 'Cao Đẳng Kỹ Thuật Cao Thắng',
+                typography: '<p><strong>Xếp loại</strong>: Khá<br><strong>Ngành</strong>: Công Nghệ Thông Tin</p><p>Tốt nghiệp chuyên ngành phần mềm tại trường Cao Thắng.<br>Trong quá trình học, tích luỹ được vốn kiến thức về lập trình website, thiết kế phần mềm, sữa chữa, thay thế phần cứng máy tính. Kỹ năng phân tích giải quyết vấn đề, tư duy logic. </p>'
+              },
+              {
+                data:   '04/2015 - 10/2015',
+                job:    'CHỨNG CHỈ THIẾT KẾ ĐỒ HOẠ 2D',
+                school: 'Trung tâm tin học ĐH KHTN',
+                typography: '<p>Sau khi tốt nghiệp lớp kỹ thuật viên đồ hoạ 2D, tôi sử dụng tốt các phần mềm phục vụ thiết kế như: Adobe Photoshop, Adobe Illustrator, Adobe Lightroom.<br>Kỹ năng thiết kế, các ẩn phẩm quảng cáo... </p>',
+                tags: ['Photoshop', 'Illustrator', 'Lightroom']
+              }
+            ]
+          each item in timeline_education
+            li(class="wow fade-in-up")
+              +timeline-education(item)
+                        
+  // ./ Kinh Nghiệm Làm Việc
+  section.section-wrapper.section-experience#experience
+    .wrapper
+      .section-header(class="wow fade-in-up")
+        +heading-primary('Kinh Nghiệm Làm Việc')
+      .section-content
+        ul.timeline-list
+          -
+            var timeline_experience = [
+              {
+                data:     '11/2014 - 09/2016',
+                company:  'Zago - Thụy Điển',
+                job:      'Web Designer - Frontend',
+                lists: [
+                  'Chịu trách nhiệm chỉnh sửa và gia công các trang web Wordpress và Shopify.',
+                  'Thiết kế banner, chỉnh sửa ảnh.',
+                  'Thiết kế giao diện web, cắt file psd sang html.',
+                  'Setup các trang web Wordpress, Shopify.'
+                ],
+                tags:     ['HTML5', 'CSS3', 'Jquery', 'Wordpress', 'Shopify']
+              },
+              {
+                data:     '10/2016 - 04/2019',
+                company:  'Vietry - Nhật Bản',
+                job:      'Web Designer - Frontend',
+                lists: [
+                  'Chỉnh sửa ảnh và gia công các trang web của Nhật.',
+                  'Gia công và thiết kế responsive cho web',
+                  'Thiết kế banner, hình ảnh ...',
+                  'Viết các hiệu ứng chuyển động transition cho web.',
+                  'Gia công mới website cho khác hàng',
+                  'Gia công theme wordpress'
+                ],
+                tags:     ['HTML5', 'CSS3', 'Jquery', 'Wordpress', 'Responsive', 'Transition']
+              },
+              {
+                data:     '10/2016 - 04/2019',
+                company:  'Fastcoding - Nhật Bản',
+                job:      'Front-End Developer',
+                lists: [
+                  'Gia công các trang web của Nhật, đảm bảo chuẩn w3school',
+                  'Chuyển đổi PSD to HTML (đảm bảo perfect pixel, responsive)',
+                  'Tạo page wordpress'
+                ],
+                text: '<p>Kinh nghiệm làm việc với: <br>GruntJS, PugJS, SASS, SCSS, Jquery, Git, cross-browser, optimization techniques and developer tools.</p>',
+                tags:     ['HTML5', 'CSS3', 'Javascript', 'Jquery', 'Responsive', 'SASS, LESS, Compass', 'GruntJS', 'PugJS', 'cross-browser', 'Wordpress', 'GIT']
+              }
+            ]
+          each item in timeline_experience
+            li(class="wow fade-in-up")
+              +timeline-experience(item)
+
+  // ./ Portfolio
+  section.section-wrapper.section-portfolio#portfolio
+    .wrapper
+      .section-header(class="wow fade-in-up")
+        +heading-primary('Portfolio')
+      .section-content
+        .clearfix
+          -
+            var portfolio_list_01 = [
+              {
+                img:      path+'/img/site/freelancer-project-01.png',
+                heading:  'Phisyo',
+                delay:    '.4s'
+              },
+              {
+                img:      path+'/img/site/freelancer-project-02.png',
+                heading:  'Góc Nội Trợ',
+                delay:    '.6s'
+              },
+              {
+                img:      path+'/img/site/freelancer-project-03.png',
+                heading:  'Template',
+                delay:    '.8s'
+              },
+              {
+                img:      path+'/img/site/freelancer-project-04.png',
+                heading:  'Hạc Cảnh Viên',
+                delay:    '1s'
+              }
+            ]
+          ul.layout-row.small-one-column.medium-two-column.large-four-column
+            each portfolio in portfolio_list_01
+              li.column(class="wow fade-in-up" data-wow-delay=portfolio.delay)
+                +portfolio(portfolio)
+        hr.hr-line
+        .clearfix
+          -
+            var portfolio_list_01 = [
+              {
+                img:      path+'/img/site/vietry-project-01.png',
+                heading:  'Project 01',
+                delay:    '.4s'
+              },
+              {
+                img:      path+'/img/site/vietry-project-02.png',
+                heading:  'Project 02',
+                delay:    '.6s'
+              },
+              {
+                img:      path+'/img/site/vietry-project-03.png',
+                heading:  'Project 03',
+                delay:    '.8s'
+              },
+              {
+                img:      path+'/img/site/vietry-project-04.png',
+                heading:  'Project 04',
+                delay:    '1s'
+              }
+            ]
+          ul.layout-row.small-one-column.medium-two-column.large-four-column
+            each portfolio in portfolio_list_01
+              li.column(class="wow fade-in-up" data-wow-delay=portfolio.delay)
+                +portfolio(portfolio)
+        hr.hr-line
+        .clearfix
+          -
+            var portfolio_list_01 = [
+              {
+                img:      path+'/img/site/fastcoding-project-01.png',
+                heading:  'Project 01',
+                delay:    '.4s'
+              },
+              {
+                img:      path+'/img/site/fastcoding-project-02.png',
+                heading:  'Project 02',
+                delay:    '.6s'
+              },
+              {
+                img:      path+'/img/site/fastcoding-project-03.png',
+                heading:  'Project 03',
+                delay:    '.8s'
+              }
+            ]
+          ul.layout-row.small-one-column.medium-two-column.large-four-column
+            each portfolio in portfolio_list_01
+              li.column(class="wow fade-in-up" data-wow-delay=portfolio.delay)
+                +portfolio(portfolio)
+
+  

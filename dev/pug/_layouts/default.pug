@@ -1,0 +1,46 @@
+include ../_mixins/_all
+
+block vars
+  -title        = ''
+  -description  = ''
+  -keywords     = ''
+  -pageID       = ''
+  -path         = ''
+
+doctype html
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    meta(name="HandheldFriendly", content="True")
+    meta(name="MobileOptimized", content="320")
+    meta(name="format-detection", content="telephone=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    //[if IE]><meta http-equiv="cleartype" content="on"><![endif]
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description", content=description)
+    meta(name="keywords", content=keywords)
+    title=title
+    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css")
+    link(rel="stylesheet", href=path+"/css/style.css")
+    // ./ Load Google Font
+    script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
+    script.
+      WebFont.load({
+        google: {
+          families: ['Roboto:400', 'Roboto Slab:700']
+        }
+      });
+  body
+    .container
+      include ../_parts/header
+      main.main-wrapper
+        block container
+      include ../_parts/footer
+    .bg-content
+      .start-01
+      .start-02
+      .start-03
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js")
+    script(src=path+"/js/scripts.js")

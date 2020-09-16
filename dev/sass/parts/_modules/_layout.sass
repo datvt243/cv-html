@@ -1,0 +1,145 @@
+@charset "utf-8"
+
+.section
+
+  &-wrapper
+    padding: 
+      top: 10rem
+      bottom: 10rem
+
+  &-header
+    margin-bottom: 4rem
+
+  &-content
+    &:not(:last-child)
+      margin-bottom: 2rem
+
+  +ex-small
+
+    &-wrapper
+      padding: 
+        top: 5rem
+        bottom: 5rem
+
+  +medium
+
+    &-wrapper
+      padding: 
+        top: 5rem
+        bottom: 5rem
+
+  +large
+
+    &-wrapper
+      padding: 
+        top: 7rem
+        bottom: 7rem
+
+.layout-row
+  $val: 1.5rem
+  +display-flex
+  +flex-wrap(wrap)
+  margin: 
+    left: -#{$val}
+    right: -#{$val}
+  > .column
+    width: 100%
+    padding: 
+      left: #{$val}
+      right: #{$val}
+    margin-bottom: 3em
+    &.align-self-end
+      align-self: flex-end
+
+  .is-center
+    +justify-content(center)
+
+  @media (min-width: $base-ex-small)
+
+    &.ex-small-one-column
+      > .column
+        +flex(0 0 100%)
+        max-width: 100%
+
+    &.ex-small-two-column
+      > .column
+        +flex(0 0 50%)
+        max-width: 50%
+
+    &.ex-small-three-column
+      > .column
+        +flex(0 0 33.33%)
+        max-width: 33.33%
+
+  @media (min-width: $base-small)
+
+    &.small-one-column
+      > .column
+        +flex(0 0 100%)
+        max-width: 100%
+
+    &.small-two-column
+      > .column
+        +flex(0 0 50%)
+        max-width: 50%
+
+    &.small-three-column
+      > .column
+        +flex(0 0 33.33%)
+        max-width: 33.33%
+
+  @media (min-width: $base-medium)
+
+    &.medium-one-column
+      > .column
+        +flex(0 0 100%)
+        max-width: 100%
+
+    &.medium-two-column
+      > .column
+        +flex(0 0 50%)
+        max-width: 50%
+
+    &.medium-three-column
+      > .column
+        +flex(0 0 33.33%)
+        max-width: 33.33%
+
+  @media (min-width: $base-large)
+
+    &.large-two-column
+      > .column
+        +flex(0 0 50%)
+        max-width: 50%
+
+    &.large-three-column
+      > .column
+        +flex(0 0 33.33%)
+        max-width: 33.33%
+
+    &.large-four-column
+      > .column
+        +flex(0 0 25%)
+        max-width: 25%
+
+  +small
+
+    &.ex-small-one-column
+      > .column
+        &:last-child
+          margin-bottom: 0
+
+  +medium
+
+    &.small-one-column
+      > .column
+        &:last-child
+          margin-bottom: 0
+
+  +large
+
+    &.medium-one-column
+      > .column
+        &:last-child
+          margin-bottom: 0
+

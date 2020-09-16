@@ -1,0 +1,67 @@
+mixin heading-primary(text, tag = 'h2')
+  #{tag}.heading-primary!= text
+
+mixin heading-secondary(text, tag = 'h3')
+  #{tag}.heading-secondary!= text
+
+mixin list(list)
+  ul.list
+    each item in list
+      li!= item
+
+mixin skills(skill)
+  .progress-circle.js-progress-circle
+    .loader.js-loader(data-percent= skill.percent)
+    p.progress-title= skill.title
+
+mixin progress-bar(item)
+  .progress-bar.js-progress-bar
+    p.progress-title= item.title
+    .line
+      span.js-bar(data-width= item.width)
+
+mixin timeline-education(item)
+  .timeline-item
+    p.timeline-date
+      span.lable!= item.data
+    p.timeline-job
+      | Ngành: #{item.job}
+    p.timeline-school
+      | Trường: #{item.school}
+    .typography-wrapper!= item.typography
+    if item.tags
+      ul.list-tags
+        each tag in item.tags
+          li
+            .tag= tag
+
+mixin timeline-experience(item)
+  .timeline-item
+    p.timeline-date
+      span.lable!= item.data
+    p.timeline-job
+      | Vị trí: #{item.job}
+    p.timeline-school
+      | Công ty: #{item.company}
+    .typography-wrapper
+      if item.lists
+        ul.list
+          each list in item.lists
+            li= list
+      if item.text
+        .clearfix!= item.text
+      if item.tags
+        ul.list-tags
+          each tag in item.tags
+            li
+              .tag= tag
+
+mixin portfolio(portfolio)
+  .portfolio-card
+    a.portfolio-link(href=portfolio.img data-lightbox="portfolio" data-title=portfolio.heading)
+      p.portfolio-image
+        img(src=portfolio.img, alt='Portfolio IMG')
+      p.portfolio-heading!= portfolio.heading
+
+
+              

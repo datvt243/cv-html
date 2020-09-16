@@ -1,0 +1,30 @@
+@charset "utf-8"
+
+/* MEDIA QUERIES
+ * -----------------------------------------------*/
+=desktop-ie
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    @content
+=desktop-edge
+  @supports (-ms-ime-align: auto)
+    @content
+
+=ex-large
+  @media (max-width: $base-ex-large)
+    @content
+=large
+  @media (max-width: $base-large)
+    @content
+=medium
+  @media (max-width: $base-medium)
+    @content
+=small
+  @media (max-width: $base-small)
+    @content
+=ex-small
+  @media (max-width: $base-ex-small)
+    @content
+=text-wrap
+  overflow-wrap: break-word
+  +desktop-ie
+    word-break: break-all
