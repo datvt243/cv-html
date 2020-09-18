@@ -185,19 +185,19 @@ block container
                     var list_tag01 = ['Bootstrap', 'Foundation']
                   each item in list_tag01
                     li
-                      .tag= item
+                      span.tag= item
                 ul.list-tags
                   -
                     var list_tag02 = ['SASS, SCSS, Compass', 'Cross-browser']
                   each item in list_tag02
                     li
-                      .tag= item
+                      span.tag= item
                 ul.list-tags
                   -
                     var list_tag03 = ['Grunt', 'Pugjs', 'GIT']
                   each item in list_tag03
                     li
-                      .tag= item
+                      span.tag= item
             .column.margin-bottom-0(class="wow fade-in-up" data-wow-delay='.8s')
               +heading-secondary('Back-end')
               .progress-wrapper
@@ -220,7 +220,7 @@ block container
                     var list_tag04 = ['Wordpress', 'Shopify']
                   each item in list_tag04
                     li
-                      .tag= item
+                      span.tag= item
 
   // ./ Học vấn / bằng cấp
   section.section-wrapper.section-education#education
@@ -389,4 +389,22 @@ block container
               li.column(class="wow fade-in-up" data-wow-delay=portfolio.delay)
                 +portfolio(portfolio)
 
-  
+  // ./ Vue project
+  section.section-wrapper.section-moreinfo
+    .wrapper
+      .section-header(class="wow fade-in-up")
+        +heading-secondary('Project Vue Simple', 'h2')
+      .section-content
+        ul.layout-row.small-one-column.medium-two-column.large-four-column
+          li.column(class="wow fade-in-up" data-wow-delay=".4s")
+            .portfolio-card
+              a.portfolio-link(href="https://datvt243.github.io/vue-todo-list-simple/" target="_blank" ref="noopener")
+                p.portfolio-image
+                  img(src=path+'/img/vuejs.jpg', alt='Vue')
+                p.portfolio-heading Todo List
+            ul.list-tags
+              -
+                var list_vue_tags_01 = ['VueCLI', 'Vux']
+              each item in list_vue_tags_01
+                li
+                  span.tag= item
