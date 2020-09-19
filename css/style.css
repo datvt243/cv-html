@@ -846,7 +846,7 @@ footer {
 .btn-download {
   color: #fff;
   background-color: #ff6868;
-  border-radius: 0.2rem solid #ff6868;
+  border: 0.2rem solid #ff6868;
 }
 .btn-download:hover {
   color: #ff6868;
